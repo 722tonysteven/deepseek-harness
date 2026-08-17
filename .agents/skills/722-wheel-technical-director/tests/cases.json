@@ -1,0 +1,75 @@
+[
+  {
+    "id": "x3m-max-concave",
+    "prompt": "2021 BMW X3M. Front 20x10 ET25, Rear 20x11 ET35, PCD 5x112, CB 66.6. 这套参数是否可做？是否为极限深凹的参数？",
+    "must_include_meaning": [
+      "可以做",
+      "不是极限深凹",
+      "如果要极限深凹，需要当前车轮参数",
+      "需要当前车轮最外缘到轮眉的距离"
+    ],
+    "must_not_do": [
+      "用正ET或负ET作为极限深凹的判定标准",
+      "自行补原厂轮毂参数",
+      "自行补刹车盘直径或卡钳规格",
+      "把能否生产和是否极限深凹混成一个无法判断的结论",
+      "输出完整生产检查报告"
+    ]
+  },
+  {
+    "id": "same-width-et42-et43",
+    "prompt": "Front 20x9 ET30, Rear 20x10.5 ET42。后轮考虑改成 20x10.5 ET43。主要目标是不超出车身，ET42 和 ET43 哪个更安全？为什么？",
+    "must_include_meaning": [
+      "从不超车身的角度ET43更保守",
+      "ET43外侧比ET42向内1mm",
+      "ET43内侧也多占1mm空间"
+    ],
+    "must_not_do": [
+      "把ET43无条件称为整体装车更安全",
+      "要求一整套无关车辆数据",
+      "写完整技术报告"
+    ]
+  },
+  {
+    "id": "supra-widebody-ambiguity",
+    "prompt": "2021 Toyota Supra，前轮现在 19x9.5 ET17，只换两个前轮。已安装 2 inches wide body kit。客户想做 19x10J，要求尽量和宽体轮眉齐平。前轮 ET 怎么推荐？",
+    "must_include_meaning": [
+      "先确认2 inches是每侧还是总宽",
+      "9.5J到10J外侧自然增加6.35mm",
+      "优先测当前轮毂最外缘到现有宽体轮眉最外缘的距离",
+      "没有确认宽体定义或实测前不要锁定准确ET"
+    ],
+    "must_not_do": [
+      "默认2 inches等于每侧1英寸",
+      "默认2 inches等于每侧2英寸",
+      "用原轮眉而不是安装后的宽体轮眉作为主要实测基准"
+    ]
+  },
+  {
+    "id": "porsche-no-invented-deep-lip",
+    "prompt": "2020 Porsche 911 Carrera. Front 20x9 ET42, Rear 21x12 ET64, 5x130, CB71.6, Lite Gold center with Chrome lip. 客户希望按这套参数生产。现在是否可以直接确认生产？不要假设我没提供的数据。",
+    "must_include_meaning": [
+      "不要把Chrome lip理解成Deep Lip",
+      "没有当前轮毂参数时不要自行代入常见原厂参数",
+      "只指出真正阻止直接确认生产的关键条件"
+    ],
+    "must_not_do": [
+      "自行添加客户目标Deep Lip",
+      "自行填入常见原厂轮毂参数计算",
+      "自行填入刹车盘或卡钳规格"
+    ]
+  },
+  {
+    "id": "brake-refusal-find-alternative",
+    "prompt": "客户车型是特殊刹车版本，工厂要卡钳测量，但客户不愿意测。已有车型年份、VIN、目标轮毂尺寸和ET。订单还能不能继续推进？怎么处理？",
+    "must_include_meaning": [
+      "不要因为客户拒绝复杂测量就直接停止订单",
+      "先利用已有VIN、已知刹车型号、工厂资料、CAD或刹车模板尝试确认",
+      "仍缺关键避让数据时只要求最简单的关键测量"
+    ],
+    "must_not_do": [
+      "机械重复要求客户完成整套卡钳测量表",
+      "在刹车避让未确认时承诺一定安全"
+    ]
+  }
+]
