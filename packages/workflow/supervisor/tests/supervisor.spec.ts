@@ -2,10 +2,11 @@ import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it } from 'vitest'
 import LlmRuntime, { LlmAdapter } from '@deepseek-ai/dsh-llm'
 import type { GenerateOptions, StreamChunk } from '@deepseek-ai/dsh-llm'
-import SupervisorService, {
+import {
   parseSupervisorDecision,
   SupervisorError,
-} from '@deepseek-ai/dsh-supervisor'
+  SupervisorService,
+} from '@deepseek-ai/dsh-workflow/src/supervisor.ts'
 
 class ScriptedAdapter extends LlmAdapter {
   readonly requests: GenerateOptions[] = []
