@@ -2,7 +2,7 @@
 
 English | [中文](README.zh.md)
 
-This family runs model-authored orchestration workflows over subagents and exposes general and fixed-policy tools to the model.
+This family runs model-authored orchestration workflows over subagents, exposes general and fixed-policy tools to the model, and provides independent review orchestration.
 
 | Package | Role | ctx key |
 |---|---|---|
@@ -10,7 +10,8 @@ This family runs model-authored orchestration workflows over subagents and expos
 | [`workflow-worker-thread/`](workflow-worker-thread/README.md) | Runs workflow scripts in worker threads | registers on `ctx.workflowEngine` |
 | [`tool-workflow/`](tool-workflow/README.md) | Exposes general workflow execution to the model | registers on `ctx.tools` |
 | [`tool-ralph/`](tool-ralph/README.md) | Exposes the fixed fresh-agent Ralph workflow | registers on `ctx.tools` |
+| [`supervisor/`](supervisor/README.md) | Reviews completed agent outputs through an independently configured model route | `ctx.supervisor` |
 
-Worker threads isolate workflow execution from the host event loop but are not a security boundary. See the [dynamic-workflow](../../.agents/notes/implemented/feature/2026-07-05-dynamic-workflows.md) and [Ralph tool](../../.agents/notes/implemented/feature/2026-07-19-fresh-agent-ralph-workflow-tool.md) decisions.
+Worker threads isolate workflow execution from the host event loop but are not a security boundary. See the [dynamic-workflow](../../.agents/notes/implemented/feature/2026-07-05-dynamic-workflows.md) and [Ralph tool](../../.agents/notes/implemented/feature/2026-07-19-fresh-agent-ralph-workflow-tool.md) decisions. The supervisor is currently proposed in the [GPT supervisor loop Agent Note](../../.agents/notes/proposed/feature/2026-08-17-gpt-supervisor-loop.md).
 
-The subsystem reference — start requests, `WorkflowMeta`, results, live runs, `workflow/*` events — is [docs/subsystems/workflow.md](../../docs/subsystems/workflow.md); decisions in the [dynamic-workflows](../../.agents/notes/implemented/feature/2026-07-05-dynamic-workflows.md) and [Ralph consumer](../../.agents/notes/implemented/feature/2026-07-19-fresh-agent-ralph-workflow-tool.md) Agent Notes.
+The workflow subsystem reference — start requests, `WorkflowMeta`, results, live runs, `workflow/*` events — is [docs/subsystems/workflow.md](../../docs/subsystems/workflow.md); decisions in the [dynamic-workflows](../../.agents/notes/implemented/feature/2026-07-05-dynamic-workflows.md) and [Ralph consumer](../../.agents/notes/implemented/feature/2026-07-19-fresh-agent-ralph-workflow-tool.md) Agent Notes.
